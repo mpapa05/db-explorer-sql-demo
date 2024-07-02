@@ -1,0 +1,68 @@
+.mat-tree {
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .mat-tree-node {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 2px 0;
+  }
+  
+  .mat-tree-node:hover {
+    background-color: #e0f7fa;
+    cursor: pointer;
+  }
+  
+  
+  /* Gomb stílusok */
+  button.mat-icon-button {
+    padding: 5px;
+    margin-right: 5px;
+  }
+  
+  /* Kibontás ikon */
+  .mat-tree-node-icon {
+    font-size: 18px;
+    color: #0277bd;
+  }
+
+  .custom-tree {
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f0f4c3;
+  }
+  
+  .custom-tree-node {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .custom-tree-node:hover {
+    background-color: #a5d6a7;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .dynamic-icon {
+    color: black !important;
+    cursor: default;
+  }
+
+  .dynamic-icon:hover {
+    background-color: #e0f7fa !important;
+    opacity: 1;
+    cursor: default;
+  }
+  
+  .custom-icon {
+    font-size: 20px;
+    color: #388e3c;
+  }

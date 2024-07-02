@@ -1,0 +1,35 @@
+<p>file-tree works!</p>
+<div class="flex flex-row">
+    <mat-tree class="basis-1/2 min-w-[320px]" [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+            {{node.name}}
+            <button mat-icon-button [disabled]="true && selectedNode !== node" class="mr-[8px] dynamic-icon">
+                <i class="fas fa-xs absolute right-[10px]" [ngClass]="node.icon" aria-hidden="true"></i>
+            </button>
+            <button mat-raised-button (click)="showMeta(node)" [disabled]="isAnyButtonDisabled && selectedNode !== node" class="mr-[8px]">
+                {{ selectedNode === node && isMetaVisible ? 'Hide Meta' : 'Show Meta' }}
+            </button>
+        </mat-tree-node>
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle
+                    [attr.aria-label]="'Toggle ' + node.name" class="mr-[8px]">
+                <i class="fas fa-xs absolute right-[10px]" [ngClass]="treeControl.isExpanded(node) ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+            </button>
+            {{node.name}}
+            <button mat-icon-button [disabled]="true && selectedNode !== node" class="mr-[8px] dynamic-icon">
+                <i class="fas fa-xs absolute right-[10px]" [ngClass]="node.icon" aria-hidden="true"></i>
+            </button>
+            <button mat-raised-button (click)="showMeta(node)" [disabled]="isAnyButtonDisabled && selectedNode !== node" class="mr-[8px]">
+                {{ selectedNode === node && isMetaVisible ? 'Hide Meta' : 'Show Meta' }}
+            </button>
+        </mat-tree-node>
+    </mat-tree>
+
+    <mat-card class="basis-1/2" *ngIf="isMetaVisible">
+        <ng-container *ngIf="selectedNode">
+            <h3>{{ selectedNode.name }}</h3>
+            <p>Type: {{ selectedNode.type }}</p>
+            <p>Icon: {{ selectedNode.icon }}</p>
+        </ng-container>
+    </mat-card>
+</div>
