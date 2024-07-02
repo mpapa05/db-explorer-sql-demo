@@ -1,0 +1,12 @@
+<p>search-text works!</p>
+<div >
+    <ngx-codemirror
+      [(ngModel)]="content"
+      [options]="{
+        lineNumbers: true,
+        theme: 'material',
+        mode: 'text/x-mysql'
+      }"
+      style="height: 400px; width: 100%;">
+    </ngx-codemirror>
+</div>
