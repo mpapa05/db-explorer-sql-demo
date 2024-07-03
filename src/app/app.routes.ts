@@ -5,7 +5,7 @@ import { ComparerComponent } from './components/comparer/comparer.component';
 import { SearchTextComponent } from './components/search-text/search-text.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'browser', component: BrowserComponent },
     { path: 'comparer', component: ComparerComponent },
     { path: 'search', component: SearchTextComponent },

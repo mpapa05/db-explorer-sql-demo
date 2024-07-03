@@ -1,1 +1,24 @@
-<p>comparison-dialog works!</p>
+<h1 mat-dialog-title>Elemek összehasonlítása</h1>
+<div mat-dialog-content>
+  <h3>Elem 1</h3>
+  <p><strong>Name:</strong> {{data.node1.name}}</p>
+  <p><strong>Type:</strong> {{data.node1.type}}</p>
+  <p><strong>Icon:</strong> <i class="fas" [ngClass]="data.node1.icon"></i></p>
+  <h3>Elem 2</h3>
+  <p><strong>Name:</strong> {{data.node2.name}}</p>
+  <p><strong>Type:</strong> {{data.node2.type}}</p>
+  <p><strong>Icon:</strong> <i class="fas" [ngClass]="data.node2.icon"></i></p>
+  <h3>Különbségek</h3>
+  <p *ngIf="data.node1.name !== data.node2.name">
+    <strong>Name:</strong> <span class="text-red-500">{{data.node1.name}}</span> vs <span class="text-red-500">{{data.node2.name}}</span>
+  </p>
+  <p *ngIf="data.node1.type !== data.node2.type">
+    <strong>Type:</strong> <span class="text-red-500">{{data.node1.type}}</span> vs <span class="text-red-500">{{data.node2.type}}</span>
+  </p>
+  <p *ngIf="data.node1.icon !== data.node2.icon">
+    <strong>Icon:</strong> <i class="fas" [ngClass]="data.node1.icon"></i> vs <i class="fas" [ngClass]="data.node2.icon"></i>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Bezárás</button>
+</div>

@@ -183,7 +183,7 @@ export class ComparerComponent {
   }
 
   compareNodes() {
-    if (this.selectedNode1 && this.selectedNode2) {
+    if (this.selectedNode1 && this.selectedNode2 && this.isAnyButtonDisabled1 && this.isAnyButtonDisabled2) {
       this.dialog.open(ComparisonDialogComponent, {
         data: { node1: this.selectedNode1, node2: this.selectedNode2 }
       });

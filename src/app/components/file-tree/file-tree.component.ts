@@ -123,7 +123,6 @@ export class FileTreeComponent {
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
   showMeta(node: FileNode) {
-    console.log('Show metadata');
     if (this.selectedNode === node && this.isMetaVisible) {
       this.isMetaVisible = false;
       this.selectedNode = null;
