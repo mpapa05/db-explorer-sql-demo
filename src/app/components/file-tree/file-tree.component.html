@@ -25,11 +25,11 @@
         </mat-tree-node>
     </mat-tree>
 
-    <mat-card class="basis-1/2" *ngIf="isMetaVisible">
+    <mat-card class="basis-1/2 p-[10px] m-[10px]" *ngIf="isMetaVisible">
         <ng-container *ngIf="selectedNode">
-            <h3>{{ selectedNode.name }}</h3>
-            <p>Type: {{ selectedNode.type }}</p>
-            <p>Icon: {{ selectedNode.icon }}</p>
+            <p><b>{{ selectedNode.name }}</b></p>
+            <p><b>Type: </b> {{ selectedNode.type }}</p>
+            <p><b>Icon: </b> {{ selectedNode.icon }}</p>
         </ng-container>
     </mat-card>
 </div>

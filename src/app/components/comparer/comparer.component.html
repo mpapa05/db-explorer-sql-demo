@@ -1,1 +1,62 @@
 <p>comparer works!</p>
+<div class="absolute w-[100%]">
+    <button mat-raised-button (click)="compareNodes()">Összehasonlítás</button>
+    <div class="flex flex-row">
+        <div class="basis-1/2 min-w-[320px]">
+            <h2>Fa struktúra 1</h2>
+            <mat-tree [dataSource]="dataSource1" [treeControl]="treeControl1">
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                    {{node.name}}
+                    <!-- <button mat-button (click)="selectNode(node, 1)"> -->
+                        <i class="fas mx-[10px]" [ngClass]="node.icon"></i>
+                    <!-- </button> -->
+                    <button mat-raised-button (click)="selectNode(node, 1)" [disabled]="isAnyButtonDisabled1 && selectedNode1 !== node" class="mr-[8px]">
+                        {{ selectedNode1 === node && isAnyButtonDisabled1 ? 'Deselect' : 'Select' }}
+                    </button>
+                </mat-tree-node>
+                <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                    <button mat-icon-button matTreeNodeToggle
+                        [attr.aria-label]="'Toggle ' + node.name" class="mr-[8px]">
+                        <i class="fas fa-xs absolute right-[10px]  ml-[10px]" [ngClass]="treeControl1.isExpanded(node) ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+                    </button>
+                    {{node.name}}
+                    <!-- <button mat-button (click)="selectNode(node, 1)"> -->
+                        <i class="fas mx-[10px]" [ngClass]="node.icon"></i>
+                    <!-- </button> -->
+                    <button mat-raised-button (click)="selectNode(node, 1)" [disabled]="isAnyButtonDisabled1 && selectedNode1 !== node" class="mr-[8px]">
+                        {{ selectedNode1 === node && isAnyButtonDisabled1 ? 'Deselect' : 'Select' }}
+                    </button>
+                </mat-tree-node>
+            </mat-tree>
+        </div>
+    
+        <div class="basis-1/2 min-w-[320px]">
+            <h2>Fa struktúra 2</h2>
+            <mat-tree [dataSource]="dataSource2" [treeControl]="treeControl2">
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                    {{node.name}}
+                    <!-- <button mat-button (click)="selectNode(node, 2)"> -->
+                        <i class="fas mx-[10px]" [ngClass]="node.icon"></i>
+                    <!-- </button> -->
+                    <button mat-raised-button (click)="selectNode(node, 2)" [disabled]="isAnyButtonDisabled2 && selectedNode2 !== node" class="mr-[8px]">
+                        {{ selectedNode2 === node && isAnyButtonDisabled2 ? 'Deselect' : 'Select' }}
+                    </button>
+                </mat-tree-node>
+                <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                    <button mat-icon-button matTreeNodeToggle
+                        [attr.aria-label]="'Toggle ' + node.name" class="mr-[8px]">
+                        <i class="fas fa-xs absolute right-[10px]  ml-[10px]" [ngClass]="treeControl2.isExpanded(node) ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+                    </button>
+                    {{node.name}}
+                    <!-- <button mat-button (click)="selectNode(node, 2)"> -->
+                        <i class="fas mx-[10px]" [ngClass]="node.icon"></i>
+                    <!-- </button> -->
+                    <button mat-raised-button (click)="selectNode(node, 2)" [disabled]="isAnyButtonDisabled2 && selectedNode2 !== node" class="mr-[8px]">
+                        {{ selectedNode2 === node && isAnyButtonDisabled2 ? 'Deselect' : 'Select' }}
+                    </button>
+                </mat-tree-node>
+            </mat-tree>
+        </div>
+    </div>
+</div>
+
